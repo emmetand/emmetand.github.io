@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Project</title>
+  <title>Emmet Andrews</title>
+  <meta name="description" content="Emmet Andrews — business analytics, data science, and entertainment industry experience.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
@@ -12,7 +13,7 @@
 <body>
 
   <header class="site-header">
-    <span class="mark">New Project</span>
+    <span class="mark">Emmet Andrews</span>
     <button id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode" aria-pressed="false">
       <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
       <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.5M12 19v2.5M21.5 12H19M5 12H2.5M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8M18.4 18.4l-1.8-1.8M7.4 7.4 5.6 5.6"/></svg>
@@ -20,17 +21,52 @@
   </header>
 
   <main class="hero">
-    <p class="status">In progress</p>
-    <h1>Something is<br>taking shape.</h1>
+    <p class="status">MSBA Candidate &middot; UCLA Anderson</p>
+    <h1>Data, decisions,<br>and a bit of story.</h1>
     <p class="lede">
-      This page is a placeholder while the real site gets built.
-      Once it's ready, it'll live at this address.
+      I'm Emmet Andrews &mdash; a business analytics grad student with a background in entertainment
+      development, building models and dashboards that turn audience and operations data into
+      decisions.
     </p>
-    <a class="button" href="mailto:you@example.com">Say hello</a>
+    <div class="actions">
+      <a class="button" href="https://github.com/emmetand" target="_blank" rel="noopener">View GitHub</a>
+      <a class="button button-outline" href="Emmet_Andrews_MSBA____Resume.docx.pdf" download>Download Resume</a>
+    </div>
   </main>
 
+  <section class="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <a class="project-card" href="https://github.com/emmetand/streaming-recs-project" target="_blank" rel="noopener">
+        <h3>Streaming Recommendation Engine</h3>
+        <p>Content recommendation engine built on viewership data to predict audience affinity and personalization.</p>
+        <span class="project-meta">Python</span>
+      </a>
+      <a class="project-card" href="https://github.com/emmetand/tv_renewal_model" target="_blank" rel="noopener">
+        <h3>TV Renewal Model</h3>
+        <p>Predictive model exploring which factors drive TV series renewal and cancellation decisions.</p>
+        <span class="project-meta">Python</span>
+      </a>
+      <a class="project-card" href="https://github.com/emmetand/dynamic-quant-equity-simulator" target="_blank" rel="noopener">
+        <h3>Dynamic Quant Equity Simulator</h3>
+        <p>Multi-factor equity strategy simulator combining market APIs, machine learning, and portfolio optimization.</p>
+        <span class="project-meta">Python</span>
+      </a>
+      <a class="project-card" href="https://github.com/emmetand/customer-retention-project" target="_blank" rel="noopener">
+        <h3>Customer Retention Dashboard</h3>
+        <p>Cohort retention analysis and KPI dashboard for exploring churn dynamics and engagement levers.</p>
+        <span class="project-meta">SQL &middot; Tableau</span>
+      </a>
+    </div>
+  </section>
+
   <footer class="site-footer">
-    <span>&copy; <span id="year"></span> New Project</span>
+    <span>&copy; <span id="year"></span> Emmet Andrews</span>
+    <span class="footer-links">
+      <a href="mailto:j.emmet.andrews@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/emmet-andrews/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/emmetand" target="_blank" rel="noopener">GitHub</a>
+    </span>
   </footer>
 
   <script src="script.js"></script>
