@@ -2,24 +2,24 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 const toggle = document.getElementById('theme-toggle');
 const root = document.documentElement;
-const stored = localStorage.getItem('theme');
 
-if (stored === 'light') {
-  root.setAttribute('data-theme', 'light');
-  toggle.setAttribute('aria-pressed', 'true');
+function setTheme(theme) {
+  const isDark = theme === 'dark';
+  if (isDark) {
+    root.setAttribute('data-theme', 'dark');
+  } else {
+    root.removeAttribute('data-theme');
+  }
+  toggle.setAttribute('aria-pressed', String(isDark));
+  toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
 }
 
+let stored = null;
+try { stored = localStorage.getItem('theme'); } catch (e) {}
+setTheme(stored || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+
 toggle.addEventListener('click', () => {
-  const isLight = root.getAttribute('data-theme') === 'light';
-  if (isLight) {
-    root.removeAttribute('data-theme');
-    localStorage.setItem('theme', 'dark');
-    toggle.setAttribute('aria-pressed', 'false');
-    toggle.setAttribute('aria-label', 'Switch to light mode');
-  } else {
-    root.setAttribute('data-theme', 'light');
-    localStorage.setItem('theme', 'light');
-    toggle.setAttribute('aria-pressed', 'true');
-    toggle.setAttribute('aria-label', 'Switch to dark mode');
-  }
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  setTheme(next);
+  try { localStorage.setItem('theme', next); } catch (e) {}
 });

@@ -13,8 +13,11 @@
 <body>
 
   <header class="site-header">
-    <span class="mark">Emmet Andrews</span>
-    <button id="theme-toggle" class="theme-toggle" aria-label="Switch to light mode" aria-pressed="false">
+    <span class="mark">
+      <svg class="mark-pine" viewBox="0 0 100 200" aria-hidden="true"><use href="#pine"/></svg>
+      Emmet Andrews
+    </span>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
       <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
       <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.5M12 19v2.5M21.5 12H19M5 12H2.5M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8M18.4 18.4l-1.8-1.8M7.4 7.4 5.6 5.6"/></svg>
     </button>
@@ -33,6 +36,59 @@
       <a class="button button-outline" href="Emmet_Andrews_MSBA____Resume.docx.pdf" download>Download Resume</a>
     </div>
   </main>
+
+  <div class="forest-scene" aria-hidden="true">
+    <svg class="forest" viewBox="0 0 1200 260" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <symbol id="pine" viewBox="0 0 100 200">
+          <polygon points="50,0 78,58 64,58 90,110 72,110 100,170 56,170 56,200 44,200 44,170 0,170 28,110 10,110 36,58 22,58"/>
+        </symbol>
+        <pattern id="dots-green" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <circle class="dot-green" cx="3.5" cy="3.5" r="1.9"/>
+        </pattern>
+        <pattern id="dots-pink" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(15)">
+          <circle class="dot-pink" cx="3" cy="3" r="1.5"/>
+        </pattern>
+      </defs>
+
+      <circle class="riso sun" cx="880" cy="95" r="68"/>
+      <circle class="riso sun-dots" cx="892" cy="88" r="68"/>
+
+      <g class="riso back-solid">
+        <g id="back-trees">
+          <use href="#pine" x="-20" y="90" width="75" height="150"/>
+          <use href="#pine" x="50" y="60" width="90" height="180"/>
+          <use href="#pine" x="125" y="100" width="70" height="140"/>
+          <use href="#pine" x="190" y="70" width="85" height="170"/>
+          <use href="#pine" x="275" y="90" width="75" height="150"/>
+          <use href="#pine" x="345" y="50" width="95" height="190"/>
+          <use href="#pine" x="435" y="100" width="70" height="140"/>
+          <use href="#pine" x="515" y="65" width="88" height="175"/>
+          <use href="#pine" x="600" y="90" width="75" height="150"/>
+          <use href="#pine" x="680" y="55" width="92" height="185"/>
+          <use href="#pine" x="775" y="95" width="72" height="145"/>
+          <use href="#pine" x="855" y="70" width="85" height="170"/>
+          <use href="#pine" x="945" y="90" width="75" height="150"/>
+          <use href="#pine" x="1025" y="50" width="95" height="190"/>
+          <use href="#pine" x="1110" y="80" width="80" height="160"/>
+          <use href="#pine" x="1170" y="100" width="70" height="140"/>
+        </g>
+      </g>
+      <use class="riso back-dots" href="#back-trees" transform="translate(7 -5)"/>
+
+      <g class="front">
+        <use href="#pine" x="0" y="60" width="100" height="200"/>
+        <use href="#pine" x="115" y="110" width="75" height="150"/>
+        <use href="#pine" x="235" y="40" width="110" height="220"/>
+        <use href="#pine" x="470" y="100" width="80" height="160"/>
+        <use href="#pine" x="645" y="120" width="70" height="140"/>
+        <use href="#pine" x="815" y="70" width="95" height="190"/>
+        <use href="#pine" x="975" y="30" width="115" height="230"/>
+        <use href="#pine" x="1110" y="90" width="85" height="170"/>
+        <rect x="0" y="244" width="1200" height="16"/>
+      </g>
+    </svg>
+  </div>
 
   <section class="projects">
     <h2>Projects</h2>
