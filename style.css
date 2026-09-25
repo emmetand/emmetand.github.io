@@ -1,0 +1,127 @@
+:root {
+  --bg: #12141a;
+  --bg-alt: #1b1e26;
+  --text: #ecead3;
+  --text-muted: #a9adb8;
+  --accent: #d8a253;
+  --border: rgba(236, 234, 227, 0.12);
+}
+
+:root[data-theme="light"] {
+  --bg: #e7e8e2;
+  --bg-alt: #dcded6;
+  --text: #14161a;
+  --text-muted: #5c6068;
+  --accent: #b8792e;
+  --border: rgba(20, 22, 26, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+}
+
+.mark {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.theme-toggle:focus-visible,
+.button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-sun { display: none; }
+:root[data-theme="light"] .icon-moon { display: none; }
+:root[data-theme="light"] .icon-sun { display: block; }
+
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.status {
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin: 0 0 1.25rem;
+}
+
+.lede {
+  max-width: 32ch;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0 0 2rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { transition: none; }
+}
