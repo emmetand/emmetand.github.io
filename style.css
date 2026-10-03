@@ -78,14 +78,81 @@ body::after {
   padding: 1.5rem 2rem;
 }
 
-.mark {
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.site-nav {
+  position: relative;
+  z-index: 10;
+}
+
+.menu-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: "Fraunces", Georgia, serif;
-  font-size: 1.05rem;
+  gap: 0.35rem;
+  background: none;
+  border: 1.5px solid transparent;
+  border-radius: 6px;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
   color: var(--heading);
-  letter-spacing: 0.01em;
+  transition: border-color 0.15s ease;
+}
+
+.menu-toggle:hover,
+.menu-toggle[aria-expanded="true"] {
+  border-color: var(--border);
+}
+
+.menu-caret {
+  width: 0.75rem;
+  height: 0.75rem;
+  transition: transform 0.15s ease;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-caret {
+  transform: rotate(180deg);
+}
+
+.site-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  min-width: 12rem;
+  margin: 0;
+  padding: 0.4rem;
+  list-style: none;
+  background: var(--card-bg);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 5px 5px 0 var(--card-shadow);
+}
+
+.site-menu[hidden] { display: none; }
+
+.site-menu a {
+  display: block;
+  padding: 0.55rem 0.75rem;
+  border-radius: 4px;
+  font-family: "Fraunces", Georgia, serif;
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.site-menu a:hover {
+  background: color-mix(in srgb, var(--ink-green) 18%, transparent);
+}
+
+.site-menu a[aria-current="page"] {
+  color: var(--ink-teal);
+}
+
+:root[data-theme="dark"] .site-menu a[aria-current="page"] {
+  color: var(--ink-green);
 }
 
 .mark-pine {
@@ -108,6 +175,8 @@ body::after {
 }
 
 .theme-toggle:focus-visible,
+.menu-toggle:focus-visible,
+.site-menu a:focus-visible,
 .button:focus-visible,
 .project-card:focus-visible,
 .footer-links a:focus-visible {
@@ -127,13 +196,17 @@ body::after {
 .hero {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 3rem 2rem 1rem;
+  align-items: center;
+  padding: 2rem 2rem 1rem;
   position: relative;
   z-index: 1;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 40rem;
+  text-align: left;
 }
 
 .status {
@@ -160,8 +233,65 @@ h1 {
   text-shadow: 3px 3px 0 color-mix(in srgb, var(--ink-pink) 55%, transparent);
 }
 
+.name {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  font-size: clamp(3.2rem, 10vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.9rem;
+  /* ground line the grove stands on */
+  border-bottom: 3px solid var(--ink-green);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--ink-orange) 60%, transparent);
+}
+
+.grove {
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+  height: 1.84em;
+  margin-bottom: -0.9rem;
+}
+
+.grove-pine {
+  display: block;
+  mix-blend-mode: var(--blend);
+}
+
+.grove-pine-1 {
+  width: 0.62em;
+  height: 1.24em;
+  fill: var(--ink-teal);
+  margin-right: -0.2em;
+}
+
+.grove-pine-2 {
+  width: 0.9em;
+  height: 1.8em;
+  fill: var(--ink-green);
+  filter: drop-shadow(3px 2px 0 var(--ink-orange));
+  position: relative;
+  z-index: 1;
+}
+
+.grove-pine-3 {
+  width: 0.5em;
+  height: 1em;
+  fill: var(--ink-teal);
+  margin-left: -0.15em;
+}
+
+.tagline {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  color: var(--heading);
+  margin: 0 0 0.9rem;
+}
+
 .lede {
-  max-width: 44ch;
+  max-width: 52ch;
   color: var(--text-muted);
   line-height: 1.6;
   margin: 0 0 2rem;
@@ -171,7 +301,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .button {
@@ -249,6 +379,15 @@ h1 {
   gap: 1.5rem;
   max-width: 960px;
   margin: 0 auto;
+}
+
+.tools {
+  padding-top: 0;
+}
+
+.tools .project-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+  justify-content: center;
 }
 
 .project-card {
@@ -331,6 +470,98 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body, .button, .project-card, .projects { transition: none; }
+  body, .button, .project-card, .projects, .menu-toggle, .menu-caret { transition: none; }
   .button:hover, .project-card:hover { transform: none; }
+}
+
+/* Inner pages (About, Contact) */
+.page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 2rem 4rem;
+}
+
+.page-inner {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-teal);
+  margin: 0 0 0.75rem;
+}
+
+:root[data-theme="dark"] .eyebrow { color: var(--ink-green); }
+
+.page h1 {
+  /* sized so headings stay on one line within the 40rem column */
+  font-size: clamp(1.8rem, 6vw, 2.75rem);
+  text-wrap: balance;
+  padding-bottom: 0.9rem;
+  border-bottom: 3px solid var(--ink-green);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--ink-orange) 60%, transparent);
+  margin-bottom: 2rem;
+}
+
+.prose p,
+.page-lede {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0 0 1.25rem;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0 0 2.5rem;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1.5px dashed color-mix(in srgb, var(--border) 45%, transparent);
+}
+
+.contact-label {
+  width: 6rem;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contact-list a {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--heading);
+  text-decoration-color: var(--ink-orange);
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
+
+.contact-list a:hover {
+  text-decoration-color: var(--ink-pink);
+}
+
+.contact-list a:focus-visible {
+  outline: 2px solid var(--ink-orange);
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .site-header { padding: 1rem; }
+  .hero { padding: 1.5rem 1rem 1rem; }
+  .page { padding: 2rem 1rem 3rem; }
+  .contact-list li { flex-direction: column; }
+  .contact-list a { font-size: 1rem; }
 }

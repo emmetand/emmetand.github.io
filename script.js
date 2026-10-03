@@ -1,4 +1,5 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+const year = document.getElementById('year');
+if (year) year.textContent = new Date().getFullYear();
 
 const toggle = document.getElementById('theme-toggle');
 const root = document.documentElement;
@@ -22,4 +23,26 @@ toggle.addEventListener('click', () => {
   const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   setTheme(next);
   try { localStorage.setItem('theme', next); } catch (e) {}
+});
+
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('site-menu');
+
+function setMenu(open) {
+  menu.hidden = !open;
+  menuToggle.setAttribute('aria-expanded', String(open));
+  menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+
+menuToggle.addEventListener('click', () => setMenu(menu.hidden));
+
+document.addEventListener('click', (e) => {
+  if (!menu.hidden && !e.target.closest('.site-nav')) setMenu(false);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !menu.hidden) {
+    setMenu(false);
+    menuToggle.focus();
+  }
 });

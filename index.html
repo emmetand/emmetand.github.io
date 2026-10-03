@@ -12,11 +12,24 @@
 </head>
 <body>
 
+  <svg class="sprite" aria-hidden="true">
+    <symbol id="pine" viewBox="0 0 100 200">
+      <polygon points="50,0 78,58 64,58 90,110 72,110 100,170 56,170 56,200 44,200 44,170 0,170 28,110 10,110 36,58 22,58"/>
+    </symbol>
+  </svg>
+
   <header class="site-header">
-    <span class="mark">
-      <svg class="mark-pine" viewBox="0 0 100 200" aria-hidden="true"><use href="#pine"/></svg>
-      Emmet Andrews
-    </span>
+    <nav class="site-nav">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+        <svg class="mark-pine" viewBox="0 0 100 200" aria-hidden="true"><use href="#pine"/></svg>
+        <svg class="menu-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+      <ul id="site-menu" class="site-menu" hidden>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
     <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
       <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
       <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.5M12 19v2.5M21.5 12H19M5 12H2.5M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8M18.4 18.4l-1.8-1.8M7.4 7.4 5.6 5.6"/></svg>
@@ -24,25 +37,32 @@
   </header>
 
   <main class="hero">
-    <p class="status">MSBA Candidate &middot; UCLA Anderson</p>
-    <h1>Data, decisions,<br>and a bit of story.</h1>
-    <p class="lede">
-      I'm Emmet Andrews &mdash; a business analytics grad student with a background in entertainment
-      development, building models and dashboards that turn audience and operations data into
-      decisions.
-    </p>
-    <div class="actions">
-      <a class="button" href="https://github.com/emmetand" target="_blank" rel="noopener">View GitHub</a>
-      <a class="button button-outline" href="Emmet_Andrews_MSBA____Resume.docx.pdf" download>Download Resume</a>
+    <div class="hero-inner">
+      <p class="status">MSBA Candidate &middot; UCLA Anderson</p>
+      <h1 class="name">
+        <span class="grove" aria-hidden="true">
+          <svg class="grove-pine grove-pine-1" viewBox="0 0 100 200"><use href="#pine"/></svg>
+          <svg class="grove-pine grove-pine-2" viewBox="0 0 100 200"><use href="#pine"/></svg>
+          <svg class="grove-pine grove-pine-3" viewBox="0 0 100 200"><use href="#pine"/></svg>
+        </span>
+        <span class="name-text">Emmet<br>Andrews</span>
+      </h1>
+      <p class="tagline">Data, decisions, and a bit of story.</p>
+      <p class="lede">
+        A business analytics grad student with a background in entertainment
+        development, building models and dashboards that turn audience and operations data into
+        decisions.
+      </p>
+      <div class="actions">
+        <a class="button" href="https://github.com/emmetand" target="_blank" rel="noopener">View GitHub</a>
+        <a class="button button-outline" href="Emmet_Andrews_MSBA____Resume.docx.pdf" download>Download Resume</a>
+      </div>
     </div>
   </main>
 
   <div class="forest-scene" aria-hidden="true">
     <svg class="forest" viewBox="0 0 1200 260" preserveAspectRatio="xMidYMax slice">
       <defs>
-        <symbol id="pine" viewBox="0 0 100 200">
-          <polygon points="50,0 78,58 64,58 90,110 72,110 100,170 56,170 56,200 44,200 44,170 0,170 28,110 10,110 36,58 22,58"/>
-        </symbol>
         <pattern id="dots-green" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
           <circle class="dot-green" cx="3.5" cy="3.5" r="1.9"/>
         </pattern>
@@ -98,11 +118,6 @@
         <p>Content recommendation engine built on viewership data to predict audience affinity and personalization.</p>
         <span class="project-meta">Python</span>
       </a>
-      <a class="project-card" href="https://github.com/emmetand/tv_renewal_model" target="_blank" rel="noopener">
-        <h3>TV Renewal Model</h3>
-        <p>Predictive model exploring which factors drive TV series renewal and cancellation decisions.</p>
-        <span class="project-meta">Python</span>
-      </a>
       <a class="project-card" href="https://github.com/emmetand/dynamic-quant-equity-simulator" target="_blank" rel="noopener">
         <h3>Dynamic Quant Equity Simulator</h3>
         <p>Multi-factor equity strategy simulator combining market APIs, machine learning, and portfolio optimization.</p>
@@ -116,10 +131,21 @@
     </div>
   </section>
 
+  <section class="projects tools">
+    <h2>Tools</h2>
+    <div class="project-grid">
+      <a class="project-card" href="https://github.com/emmetand/box-office-tools" target="_blank" rel="noopener">
+        <h3>Box Office Tools</h3>
+        <p>Pipeline that scrapes TMDB, refines and enriches theatrical release data with star power, and trains box office prediction models.</p>
+        <span class="project-meta">Python &middot; Jupyter</span>
+      </a>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <span>&copy; <span id="year"></span> Emmet Andrews</span>
     <span class="footer-links">
-      <a href="mailto:j.emmet.andrews@gmail.com">Email</a>
+      <a href="mailto:jemmetandrews@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/emmet-andrews/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/emmetand" target="_blank" rel="noopener">GitHub</a>
     </span>
