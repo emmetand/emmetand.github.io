@@ -1,0 +1,17 @@
+---
+# GitHub Pages (Jekyll) fills this in at build time with whichever PDF is in
+# the resume/ folder, so swapping the resume only means replacing that file.
+---
+{%- assign resume = site.static_files | where_exp: "f", "f.path contains '/resume/'" | where: "extname", ".pdf" | first -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume · Emmet Andrews</title>
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url={{ resume.path | relative_url }}">
+</head>
+<body>
+  <p><a href="{{ resume.path | relative_url }}">Open resume (PDF)</a></p>
+</body>
+</html>

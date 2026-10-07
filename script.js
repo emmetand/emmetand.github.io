@@ -17,7 +17,8 @@ function setTheme(theme) {
 
 let stored = null;
 try { stored = localStorage.getItem('theme'); } catch (e) {}
-setTheme(stored || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+// Dark is the default; light only if the visitor chose it
+setTheme(stored || 'dark');
 
 toggle.addEventListener('click', () => {
   const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
@@ -25,24 +26,23 @@ toggle.addEventListener('click', () => {
   try { localStorage.setItem('theme', next); } catch (e) {}
 });
 
-const menuToggle = document.getElementById('menu-toggle');
-const menu = document.getElementById('site-menu');
+// Highlight the nav link for the section currently in view
+const navLinks = document.querySelectorAll('.site-menu a[href^="#"]');
+const sections = [...navLinks].map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
 
-function setMenu(open) {
-  menu.hidden = !open;
-  menuToggle.setAttribute('aria-expanded', String(open));
-  menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+if ('IntersectionObserver' in window && sections.length) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach((a) => {
+        if (a.getAttribute('href') === '#' + entry.target.id) {
+          a.setAttribute('aria-current', 'location');
+        } else {
+          a.removeAttribute('aria-current');
+        }
+      });
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  // The hero has no nav link, so scrolling back to it clears the highlight
+  [document.querySelector('.hero'), ...sections].filter(Boolean).forEach((s) => observer.observe(s));
 }
-
-menuToggle.addEventListener('click', () => setMenu(menu.hidden));
-
-document.addEventListener('click', (e) => {
-  if (!menu.hidden && !e.target.closest('.site-nav')) setMenu(false);
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !menu.hidden) {
-    setMenu(false);
-    menuToggle.focus();
-  }
-});

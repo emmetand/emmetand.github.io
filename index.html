@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emmet Andrews</title>
-  <meta name="description" content="Emmet Andrews — business analytics, data science, and entertainment industry experience.">
+  <meta name="description" content="Emmet Andrews — Data Scientist &amp; Product Manager. Engineering AI workflows, predictive models, and data-driven user experiences.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="top">
 
   <svg class="sprite" aria-hidden="true">
     <symbol id="pine" viewBox="0 0 100 200">
@@ -19,15 +19,15 @@
   </svg>
 
   <header class="site-header">
-    <nav class="site-nav">
-      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
-        <svg class="mark-pine" viewBox="0 0 100 200" aria-hidden="true"><use href="#pine"/></svg>
-        <svg class="menu-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-      </button>
-      <ul id="site-menu" class="site-menu" hidden>
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+    <a class="home-mark" href="#top" aria-label="Emmet Andrews — back to top">
+      <svg class="mark-pine" viewBox="0 0 100 200" aria-hidden="true"><use href="#pine"/></svg>
+    </a>
+    <nav class="site-nav" aria-label="Sections">
+      <ul class="site-menu">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
@@ -36,116 +36,217 @@
     </button>
   </header>
 
-  <main class="hero">
-    <div class="hero-inner">
-      <p class="status">MSBA Candidate &middot; UCLA Anderson</p>
-      <h1 class="name">
-        <span class="grove" aria-hidden="true">
-          <svg class="grove-pine grove-pine-1" viewBox="0 0 100 200"><use href="#pine"/></svg>
-          <svg class="grove-pine grove-pine-2" viewBox="0 0 100 200"><use href="#pine"/></svg>
-          <svg class="grove-pine grove-pine-3" viewBox="0 0 100 200"><use href="#pine"/></svg>
-        </span>
-        <span class="name-text">Emmet<br>Andrews</span>
-      </h1>
-      <p class="tagline">Data, decisions, and a bit of story.</p>
-      <p class="lede">
-        A business analytics grad student with a background in entertainment
-        development, building models and dashboards that turn audience and operations data into
-        decisions.
-      </p>
-      <div class="actions">
-        <a class="button" href="https://github.com/emmetand" target="_blank" rel="noopener">View GitHub</a>
-        <a class="button button-outline" href="Emmet_Andrews_MSBA____Resume.docx.pdf" download>Download Resume</a>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="status">MSBA Candidate &middot; UCLA Anderson &middot; Dec 2026</p>
+        <h1 class="name">
+          <span class="grove" aria-hidden="true">
+            <svg class="grove-pine grove-pine-1" viewBox="0 0 100 200"><use href="#pine"/></svg>
+            <svg class="grove-pine grove-pine-2" viewBox="0 0 100 200"><use href="#pine"/></svg>
+            <svg class="grove-pine grove-pine-3" viewBox="0 0 100 200"><use href="#pine"/></svg>
+          </span>
+          <span class="name-text">Emmet<br>Andrews</span>
+        </h1>
+        <p class="tagline">Data Scientist &amp; Product Manager</p>
+        <p class="value-prop">Engineering AI workflows, predictive models, and data-driven user experiences.</p>
+        <div class="lede">
+          <p>Hello! I&rsquo;m a Master&rsquo;s candidate in Business Analytics at UCLA Anderson (graduating Dec 2026) with a background spanning NASA, Fox Entertainment, and Legendary Studios.</p>
+          <p>I combine six years of cross-functional leadership in high-stakes entertainment environments with hands-on technical skills, including Python, SQL, LLM agent architecture, and predictive modeling.</p>
+          <p>Whether designing self-serve demand dashboards, building cost-optimized AI agent services with Claude Code, or guiding executive slate investments, I focus on turning complex data into seamless products.</p>
+        </div>
+        <div class="actions">
+          <a class="button" href="#projects">View projects</a>
+          <a class="button button-outline" href="resume.html" target="_blank" rel="noopener">View resume (PDF)</a>
+        </div>
+        <p class="social-links">
+          <a href="https://www.linkedin.com/in/emmet-andrews/" target="_blank" rel="noopener">LinkedIn</a>
+          <span aria-hidden="true">&bull;</span>
+          <a href="https://github.com/emmetand" target="_blank" rel="noopener">GitHub</a>
+        </p>
       </div>
-    </div>
-  </main>
+    </section>
 
-  <div class="forest-scene" aria-hidden="true">
-    <svg class="forest" viewBox="0 0 1200 260" preserveAspectRatio="xMidYMax slice">
-      <defs>
-        <pattern id="dots-green" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-          <circle class="dot-green" cx="3.5" cy="3.5" r="1.9"/>
-        </pattern>
-        <pattern id="dots-pink" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(15)">
-          <circle class="dot-pink" cx="3" cy="3" r="1.5"/>
-        </pattern>
-      </defs>
+    <div class="forest-scene" aria-hidden="true">
+      <svg class="forest" viewBox="0 0 1200 260" preserveAspectRatio="xMidYMax slice">
+        <defs>
+          <pattern id="dots-green" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <circle class="dot-green" cx="3.5" cy="3.5" r="1.9"/>
+          </pattern>
+          <pattern id="dots-pink" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(15)">
+            <circle class="dot-pink" cx="3" cy="3" r="1.5"/>
+          </pattern>
+        </defs>
 
-      <circle class="riso sun" cx="880" cy="95" r="68"/>
-      <circle class="riso sun-dots" cx="892" cy="88" r="68"/>
+        <circle class="riso sun" cx="880" cy="95" r="68"/>
+        <circle class="riso sun-dots" cx="892" cy="88" r="68"/>
 
-      <g class="riso back-solid">
-        <g id="back-trees">
-          <use href="#pine" x="-20" y="90" width="75" height="150"/>
-          <use href="#pine" x="50" y="60" width="90" height="180"/>
-          <use href="#pine" x="125" y="100" width="70" height="140"/>
-          <use href="#pine" x="190" y="70" width="85" height="170"/>
-          <use href="#pine" x="275" y="90" width="75" height="150"/>
-          <use href="#pine" x="345" y="50" width="95" height="190"/>
-          <use href="#pine" x="435" y="100" width="70" height="140"/>
-          <use href="#pine" x="515" y="65" width="88" height="175"/>
-          <use href="#pine" x="600" y="90" width="75" height="150"/>
-          <use href="#pine" x="680" y="55" width="92" height="185"/>
-          <use href="#pine" x="775" y="95" width="72" height="145"/>
-          <use href="#pine" x="855" y="70" width="85" height="170"/>
-          <use href="#pine" x="945" y="90" width="75" height="150"/>
-          <use href="#pine" x="1025" y="50" width="95" height="190"/>
-          <use href="#pine" x="1110" y="80" width="80" height="160"/>
-          <use href="#pine" x="1170" y="100" width="70" height="140"/>
+        <g class="riso back-solid">
+          <g id="back-trees">
+            <use href="#pine" x="-20" y="90" width="75" height="150"/>
+            <use href="#pine" x="50" y="60" width="90" height="180"/>
+            <use href="#pine" x="125" y="100" width="70" height="140"/>
+            <use href="#pine" x="190" y="70" width="85" height="170"/>
+            <use href="#pine" x="275" y="90" width="75" height="150"/>
+            <use href="#pine" x="345" y="50" width="95" height="190"/>
+            <use href="#pine" x="435" y="100" width="70" height="140"/>
+            <use href="#pine" x="515" y="65" width="88" height="175"/>
+            <use href="#pine" x="600" y="90" width="75" height="150"/>
+            <use href="#pine" x="680" y="55" width="92" height="185"/>
+            <use href="#pine" x="775" y="95" width="72" height="145"/>
+            <use href="#pine" x="855" y="70" width="85" height="170"/>
+            <use href="#pine" x="945" y="90" width="75" height="150"/>
+            <use href="#pine" x="1025" y="50" width="95" height="190"/>
+            <use href="#pine" x="1110" y="80" width="80" height="160"/>
+            <use href="#pine" x="1170" y="100" width="70" height="140"/>
+          </g>
         </g>
-      </g>
-      <use class="riso back-dots" href="#back-trees" transform="translate(7 -5)"/>
+        <use class="riso back-dots" href="#back-trees" transform="translate(7 -5)"/>
 
-      <g class="front">
-        <use href="#pine" x="0" y="60" width="100" height="200"/>
-        <use href="#pine" x="115" y="110" width="75" height="150"/>
-        <use href="#pine" x="235" y="40" width="110" height="220"/>
-        <use href="#pine" x="470" y="100" width="80" height="160"/>
-        <use href="#pine" x="645" y="120" width="70" height="140"/>
-        <use href="#pine" x="815" y="70" width="95" height="190"/>
-        <use href="#pine" x="975" y="30" width="115" height="230"/>
-        <use href="#pine" x="1110" y="90" width="85" height="170"/>
-        <rect x="0" y="244" width="1200" height="16"/>
-      </g>
-    </svg>
-  </div>
-
-  <section class="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <a class="project-card" href="https://github.com/emmetand/streaming-recs-project" target="_blank" rel="noopener">
-        <h3>Streaming Recommendation Engine</h3>
-        <p>Content recommendation engine built on viewership data to predict audience affinity and personalization.</p>
-        <span class="project-meta">Python</span>
-      </a>
-      <a class="project-card" href="https://github.com/emmetand/dynamic-quant-equity-simulator" target="_blank" rel="noopener">
-        <h3>Dynamic Quant Equity Simulator</h3>
-        <p>Multi-factor equity strategy simulator combining market APIs, machine learning, and portfolio optimization.</p>
-        <span class="project-meta">Python</span>
-      </a>
-      <a class="project-card" href="https://github.com/emmetand/customer-retention-project" target="_blank" rel="noopener">
-        <h3>Customer Retention Dashboard</h3>
-        <p>Cohort retention analysis and KPI dashboard for exploring churn dynamics and engagement levers.</p>
-        <span class="project-meta">SQL &middot; Tableau</span>
-      </a>
+        <g class="front">
+          <use href="#pine" x="0" y="60" width="100" height="200"/>
+          <use href="#pine" x="115" y="110" width="75" height="150"/>
+          <use href="#pine" x="235" y="40" width="110" height="220"/>
+          <use href="#pine" x="470" y="100" width="80" height="160"/>
+          <use href="#pine" x="645" y="120" width="70" height="140"/>
+          <use href="#pine" x="815" y="70" width="95" height="190"/>
+          <use href="#pine" x="975" y="30" width="115" height="230"/>
+          <use href="#pine" x="1110" y="90" width="85" height="170"/>
+          <rect x="0" y="244" width="1200" height="16"/>
+        </g>
+      </svg>
     </div>
-  </section>
 
-  <section class="projects tools">
-    <h2>Tools</h2>
-    <div class="project-grid">
-      <a class="project-card" href="https://github.com/emmetand/box-office-tools" target="_blank" rel="noopener">
-        <h3>Box Office Tools</h3>
-        <p>Pipeline that scrapes TMDB, refines and enriches theatrical release data with star power, and trains box office prediction models.</p>
-        <span class="project-meta">Python &middot; Jupyter</span>
-      </a>
-    </div>
-  </section>
+    <section id="projects" class="projects">
+      <h2>Featured Projects</h2>
+      <div class="project-list">
+
+        <article class="project-card">
+          <p class="project-tagline">End-to-End Data Product &amp; Predictive Analytics</p>
+          <h3>NASA Demand Forecasting &amp; Capacity Allocation Tool</h3>
+          <p class="project-role">Data Science Graduate Intern @ NASA (JPL / Pasadena, CA)</p>
+          <ul class="tags" aria-label="Tech stack">
+            <li>Python</li><li>SQL</li><li>Dagster</li><li>Dash</li><li>AG Grid Enterprise</li><li>Medallion Architecture</li>
+          </ul>
+          <p class="project-overview">Owned the full product lifecycle for an internal demand-forecasting and capacity-allocation platform across 20+ research facilities.</p>
+          <h4>Key achievements &amp; impact</h4>
+          <ul class="impact">
+            <li>Translated complex researcher facility requests into an automated medallion ETL pipeline to process unstandardized data.</li>
+            <li>Designed and shipped an interactive, 4-level hierarchical rollup dashboard enabling stakeholders to filter by research interest and generate on-demand utilization reports.</li>
+            <li>Engineered a predictive capacity allocation model forecasting demand against finite constraints, giving executive leadership actionable insights on saturation risks.</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <p class="project-tagline">Rapid Prototyping &amp; AI Infrastructure</p>
+          <h3>Cited-Answer AI Agent Service</h3>
+          <p class="project-role">Lead Engineer / Personal Build</p>
+          <ul class="tags" aria-label="Tech stack">
+            <li>Python</li><li>Claude Code</li><li>LLM Tooling</li><li>API Gateways</li><li>Rate-Limiting Protocols</li>
+          </ul>
+          <p class="project-overview">Architected and deployed a private gateway and AI agent service engineered to collapse search friction and deliver verifiable, cited technical research.</p>
+          <h4>Key achievements &amp; impact</h4>
+          <ul class="impact">
+            <li>Built single-search and deep multi-query pipelines delivering page-level document citations and user memory across research sessions.</li>
+            <li>Treated unit economics and system resilience as core product requirements, optimizing query infrastructure to ~$0.004 per quick answer and ~$0.10 per deep answer.</li>
+            <li>Implemented per-user rate-limiting, graceful fault handling, and production error monitoring.</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <p class="project-tagline">Audience Engagement &amp; Content Performance Modeling</p>
+          <h3>Entertainment Analytics &amp; Slate Strategy</h3>
+          <p class="project-role">Development Executive @ Legendary Studios &amp; Coordinator @ Fox Entertainment</p>
+          <ul class="tags" aria-label="Tech stack">
+            <li>Product Analytics</li><li>Causal Inference</li><li>Time Series Analysis</li><li>Nielsen Data</li>
+          </ul>
+          <p class="project-overview">Analyzed audience engagement, viewership ratings, and market trends across 30+ animated TV series and global IP investments.</p>
+          <h4>Key achievements &amp; impact</h4>
+          <ul class="impact">
+            <li>Synthesized complex audience metrics into strategic slate recommendations for executive leadership, initiating international outsourcing and production efficiency initiatives.</li>
+            <li>Conducted deep-dive market and genre analysis identifying high-growth opportunities in adult animation and digital content scheduling.</li>
+            <li>Coordinated cross-functional workflows across technical delivery teams, creative partners, and network executives against strict linear and streaming release deadlines.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-inner">
+        <p class="eyebrow">About me</p>
+        <h2 class="section-title">From high-stakes entertainment strategy to technical building</h2>
+        <div class="prose">
+          <p>My path to technical product management has been anything but linear. I spent six years in entertainment development at Fox and Legendary Studios learning how high-stakes product decisions get made, how to align creative and technical stakeholders, and how audiences engage with complex systems.</p>
+          <p>I loved the strategic decision-making, but I knew I wanted to be on the other side of the screen: actually engineering the software and systems that drive those experiences. That pull led me to UCLA Anderson for my Master&rsquo;s in Business Analytics, and later into data science work at NASA.</p>
+          <p>When I&rsquo;m not at school or work, I enjoy woodworking, board game nights, and being a dual Canadian-US citizen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-skills">
+      <div class="section-inner section-inner-wide">
+        <p class="eyebrow">Skills</p>
+        <h2 class="section-title">Technical skills &amp; tools</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>AI &amp; Software Build</h3>
+            <ul class="tags">
+              <li>LLM Tooling</li><li>Claude Code</li><li>API Integration</li><li>Python (pandas, scikit-learn)</li><li>Git/GitHub</li><li>App Prototyping</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Data Engineering &amp; Cloud</h3>
+            <ul class="tags">
+              <li>SQL</li><li>dbt</li><li>Dagster</li><li>Azure Cloud</li><li>Medallion Architecture</li><li>ETL Pipelines</li><li>Dash</li><li>AG Grid Enterprise</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Product &amp; Analytics</h3>
+            <ul class="tags">
+              <li>Product Lifecycle Ownership</li><li>User Discovery</li><li>Predictive Modeling</li><li>Time Series Forecasting</li><li>Causal Inference</li><li>A/B Testing</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Strategy &amp; Leadership</h3>
+            <ul class="tags">
+              <li>Cross-Functional Alignment</li><li>Stakeholder Management</li><li>Data Storytelling</li><li>Executive Presentations</li><li>Budget &amp; Schedule Optimization</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="section-inner">
+        <h2 class="section-title">Let&rsquo;s connect</h2>
+        <p class="contact-lede">I am graduating in December 2026 and actively exploring opportunities in Product Management, Data Science, and Product Analytics&mdash;particularly at forward-thinking technology companies and entertainment/media platforms. I&rsquo;m currently based in Los Angeles, CA, but am open to relocating.</p>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Email</span>
+            <a href="mailto:j.emmet.andrews@gmail.com">j.emmet.andrews@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-label">Phone</span>
+            <a href="tel:+15202371222">520-237-1222</a>
+          </li>
+          <li>
+            <span class="contact-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/emmet-andrews/" target="_blank" rel="noopener">linkedin.com/in/emmet-andrews</a>
+          </li>
+          <li>
+            <span class="contact-label">GitHub</span>
+            <a href="https://github.com/emmetand" target="_blank" rel="noopener">github.com/emmetand</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
   <footer class="site-footer">
     <span>&copy; <span id="year"></span> Emmet Andrews</span>
     <span class="footer-links">
-      <a href="mailto:jemmetandrews@gmail.com">Email</a>
+      <a href="mailto:j.emmet.andrews@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/emmet-andrews/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/emmetand" target="_blank" rel="noopener">GitHub</a>
     </span>
